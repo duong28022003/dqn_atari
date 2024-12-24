@@ -152,8 +152,8 @@ summary_writer = SummaryWriter(LOG_DIR)
 online_net = Network(env, device=device)
 target_net = Network(env, device=device)
 
-online_net = Network(env).to(device)
-target_net = Network(env).to(device)
+online_net = online_net.to(device)
+target_net = target_net.to(device)
 
 target_net.load_state_dict(online_net.state_dict())
 
